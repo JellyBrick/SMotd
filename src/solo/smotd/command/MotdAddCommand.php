@@ -24,7 +24,7 @@ class MotdAddCommand extends SMotdCommand{
       return true;
     }
     $motd = implode(" ", $args);
-    if(trim($motd) == ""){
+    if(trim($motd) === ""){
       $sender->sendMessage(SMotd::$prefix . $this->getUsage() . " - " . $this->getDescription());
       return true;
     }

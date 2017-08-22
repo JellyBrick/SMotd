@@ -38,7 +38,7 @@ class SMotd extends PluginBase{
 
     $this->config = new Config($this->getDataFolder() . "setting.yml", Config::YAML);
     $this->motdList = $this->config->get("motd-list", []);
-    if(count($this->motdList) == 0){
+    if(\count($this->motdList) === 0){
       $this->getServer()->getLogger()->info("§c[SMotd] Motd 리스트가 비어있습니다. setting.yml 에서 Motd를 추가해주세요.");
       return;
     }
